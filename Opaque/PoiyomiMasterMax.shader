@@ -3,7 +3,7 @@ poiyomi master shader
 version 0.2
 */
 
-Shader ".poiyomi/Master/Opaque"
+Shader "Poiyomi/Master/OpaqueMax"
 {
     Properties
     {
@@ -98,8 +98,10 @@ Shader ".poiyomi/Master/Opaque"
     CustomEditor "PoiMaster"
     SubShader
     {
-        Tags { "RenderType" = "TransparentCutout" }
-        
+        Tags { "RenderType" = "TransparentCutout" 
+			"Queue"="Geometry+2147479647"}
+        LOD 100
+	    ZWrite On
         Pass
         {
             Name "MyShader"
